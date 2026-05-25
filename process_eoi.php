@@ -144,7 +144,10 @@ if ($street === '') {
     $errors['street'] = 'Street address is required.';
 } else if (strlen($street) > 40) {
     $errors['street'] = 'Street address cannot exceed 40 characters.';
+} else if (preg_match('/^[0-9]+$/', $street)) {
+    $errors['street'] = 'Street address cannot contain only numbers.';
 }
+
 
 // Validate Suburb/Town: Max 40 characters
 if ($suburb === '') {
