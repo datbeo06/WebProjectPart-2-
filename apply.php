@@ -94,7 +94,7 @@ $job_ref_prefill = isset($_GET['ref']) ? trim($_GET['ref']) : '';
                     <div class="form-group">
                         <label for="job_ref">Job Reference Number:</label>
                         <input type="text" id="job_ref" name="job_ref" 
-                               maxlength="5" placeholder="e.g. WD001 or SE002"
+                                placeholder="e.g. WD001 or SE002"
                                value="<?= htmlspecialchars($job_ref_prefill) ?>">
                     </div>
 
