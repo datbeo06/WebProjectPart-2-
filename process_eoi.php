@@ -154,6 +154,8 @@ if ($suburb === '') {
     $errors['suburb'] = 'Suburb/town is required.';
 } else if (strlen($suburb) > 40) {
     $errors['suburb'] = 'Suburb/town cannot exceed 40 characters.';
+} else if (preg_match('/^[0-9]+$/', $suburb)) {
+    $errors['suburb'] = 'Suburb/town cannot contain only numbers.';
 }
 
 // Validate State: Must be VIC, NSW, QLD, WA, SA, TAS, ACT, NT
