@@ -243,6 +243,8 @@ if (empty($skills_sanitized)) {
 // Validate Other Skills length
 if (strlen($other_skills) > 200) {
     $errors['other_skills'] = 'Other skills must not exceed 200 characters.';
+} else if (preg_match('/^[0-9]+$/', $other_skills)) {
+    $errors['other_skills'] = 'Other skills cannot contain only numbers.';
 }
 
 // 4. Render HTML Results page (common styling and menus included)
