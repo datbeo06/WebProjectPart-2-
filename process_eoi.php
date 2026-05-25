@@ -235,6 +235,11 @@ if (empty($skills_sanitized)) {
     $errors['skills'] = 'You must select at least one skill checkbox.';
 }
 
+// Validate Other Skills length
+if (strlen($other_skills) > 200) {
+    $errors['other_skills'] = 'Other skills must not exceed 200 characters.';
+}
+
 // 4. Render HTML Results page (common styling and menus included)
 $page_title = empty($errors) ? "Application Submitted Successfully" : "Application Errors Found";
 
