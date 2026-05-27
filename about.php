@@ -3,51 +3,17 @@
 // About Us page dynamically loading contributions from database
 // Group Nick-Thu-1030-G03
 
+//loads the database connection
 require_once 'settings.php';
 
 $page_title = "About Us - SolarCore Energy";
 $teamMembers = [];
 $teamLoadError = false;
 
-// funfacts table is a static page content stored in an array to avoid repeating tables
-$funFacts = [
-    [
-        'name' => 'Duong Danh Dat',
-        'member' => 'Member A',
-        'student_id' => '105928000',
-        'hidden_talent' => 'Japanese calligraphy',
-        'favourite_tool' => 'CSS Grid + Figma',
-        'fun_fact' => 'Enjoys AI and AI development',
-    ],
-    [
-        'name' => 'James',
-        'member' => 'Member B',
-        'student_id' => '105901030',
-        'hidden_talent' => 'Baking',
-        'favourite_tool' => 'Jira + VS Code',
-        'fun_fact' => 'Learning new languages',
-    ],
-    [
-        'name' => 'Marksamuel',
-        'member' => 'Member C',
-        'student_id' => '105920006',
-        'hidden_talent' => 'Playing guitar',
-        'favourite_tool' => 'Chrome DevTools',
-        'fun_fact' => 'Plays soccer on weekends',
-    ],
-    [
-        'name' => 'Jose Leonardo',
-        'member' => 'Member D',
-        'student_id' => '103641855',
-        'hidden_talent' => 'Playing drums',
-        'favourite_tool' => 'Visual Studio Code',
-        'fun_fact' => 'Bilingual (Spanish & English)',
-    ],
-];
-
 //sends SQL query to the database
 $result = mysqli_query($conn, "SELECT * FROM about ORDER BY member_id ASC");
 
+//Checks if the query worked then fetches all rows and stores them in $teamMembers
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         $teamMembers[] = $row;
@@ -146,14 +112,30 @@ include 'nav.inc';
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($funFacts as $fact): ?>
-                                <tr>
-                                    <td><strong><?= htmlspecialchars($fact['name']) ?> (<?= htmlspecialchars($fact['member']) ?>)</strong><br>(<?= htmlspecialchars($fact['student_id']) ?>)</td>
-                                    <td><?= htmlspecialchars($fact['hidden_talent']) ?></td>
-                                    <td><?= htmlspecialchars($fact['favourite_tool']) ?></td>
-                                    <td><?= htmlspecialchars($fact['fun_fact']) ?></td>
-                                </tr>
-                            <?php endforeach; ?>
+                            <tr>
+                                <td><strong>Duong Danh Dat (Member A)</strong><br>(105928000)</td>
+                                <td>Japanese calligraphy</td>
+                                <td>CSS Grid + Figma</td>
+                                <td>Enjoys AI and AI development</td>
+                            </tr>
+                            <tr>
+                                <td><strong>James (Member B)</strong><br>(105901030)</td>
+                                <td>Baking</td>
+                                <td>Jira + VS Code</td>
+                                <td>Learning new languages</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marksamuel (Member C)</strong><br>(105920006)</td>
+                                <td>Playing guitar</td>
+                                <td>Chrome DevTools</td>
+                                <td>Plays soccer on weekends</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jose Leonardo (Member D)</strong><br>(103641855)</td>
+                                <td>Playing drums</td>
+                                <td>Visual Studio Code</td>
+                                <td>Bilingual (Spanish &amp; English)</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
