@@ -3,37 +3,74 @@
 // About Us page dynamically loading contributions from database
 // Group Nick-Thu-1030-G03
 
-$page_title = "About Us — SolarCore Energy";
+require_once 'settings.php';
 
-$page_style = '
-    <style>
-        .about-header-title {
-            margin: 0;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: white;
-            letter-spacing: -0.5px;
-        }
+$page_title = "About Us - SolarCore Energy";
+$teamMembers = [];
+$teamLoadError = false;
 
-        @media (max-width: 700px) {
-            .about-header-title {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
-';
+$funFacts = [
+    [
+        'name' => 'Duong Danh Dat',
+        'member' => 'Member A',
+        'student_id' => '105928000',
+        'hidden_talent' => 'Japanese calligraphy',
+        'favourite_tool' => 'CSS Grid + Figma',
+        'fun_fact' => 'Enjoys AI and AI development',
+    ],
+    [
+        'name' => 'James',
+        'member' => 'Member B',
+        'student_id' => '105901030',
+        'hidden_talent' => 'Baking',
+        'favourite_tool' => 'Jira + VS Code',
+        'fun_fact' => 'Learning new languages',
+    ],
+    [
+        'name' => 'Marksamuel',
+        'member' => 'Member C',
+        'student_id' => '105920006',
+        'hidden_talent' => 'Playing guitar',
+        'favourite_tool' => 'Chrome DevTools',
+        'fun_fact' => 'Plays soccer on weekends',
+    ],
+    [
+        'name' => 'Jose Leonardo',
+        'member' => 'Member D',
+        'student_id' => '103641855',
+        'hidden_talent' => 'Playing drums',
+        'favourite_tool' => 'Visual Studio Code',
+        'fun_fact' => 'Bilingual (Spanish & English)',
+    ],
+];
+
+function e($value) {
+    return htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8');
+}
+
+$result = mysqli_query($conn, "SELECT * FROM about ORDER BY member_id ASC");
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $teamMembers[] = $row;
+    }
+
+    mysqli_free_result($result);
+} else {
+    $teamLoadError = true;
+}
 
 include 'header.inc';
 include 'nav.inc';
 ?>
 
     <main>
-        <div class="section-container" style="padding: 2rem 1.5rem 3rem;">
+        <div class="section-container about-page-container">
 
             <!-- TEAM IDENTITY, GROUP NAME + CLASS DAY/TIME -->
             <section class="about-section">
                 <div class="team-intro-card">
-                    <h2 style="margin-top: 0;">Team Identity &mdash; Group G03</h2>
+                    <h2 class="team-intro-title">Team Identity &mdash; Group G03</h2>
                     <!-- Nested list requirement -->
                     <ul>
                         <li><strong>Class:</strong> Nick &mdash; Thursday 10:30 &mdash; Group G03</li>
@@ -56,39 +93,29 @@ include 'nav.inc';
                 </div>
             </section>
 
-            <!-- MEMBER CONTRIBUTIONS & QUOTES — Dynamically Loaded from DB -->
+            <!-- MEMBER CONTRIBUTIONS & QUOTES - Dynamically Loaded from DB -->
             <section class="about-section">
                 <h2>Meet the Team</h2>
                 <p>Each member independently developed one complete page including its CSS. Below are individual contributions and personal quotes in native languages with English translation loaded dynamically from the database.</p>
 
-                <!-- Definition list (dl/dt/dd) loaded dynamically -->
-                <dl class="contrib-definition-list">
-                    <?php
-                    require_once 'settings.php';
-                    
-                    $query = "SELECT * FROM about ORDER BY member_id ASC";
-                    $result = mysqli_query($conn, $query);
-                    
-                    if ($result) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $member_label = "Member " . chr(65 + ($row['member_id'] - 1)) . " &ndash; " . htmlspecialchars($row['full_name']) . " (" . htmlspecialchars($row['student_id']) . ")";
-                            ?>
-                            <dt><?= $member_label ?></dt>
+                <?php if ($teamLoadError): ?>
+                    <p class="error">Failed to load team data from database.</p>
+                <?php else: ?>
+                    <!-- Definition list (dl/dt/dd) loaded dynamically -->
+                    <dl class="contrib-definition-list">
+                        <?php foreach ($teamMembers as $member): ?>
+                            <?php $memberLetter = chr(65 + ((int) $member['member_id'] - 1)); ?>
+                            <dt>Member <?= e($memberLetter) ?> &ndash; <?= e($member['full_name']) ?> (<?= e($member['student_id']) ?>)</dt>
                             <dd>
-                                <strong>Role:</strong> <?= htmlspecialchars($row['role']) ?>.<br>
-                                <strong>Part 1 Contribution:</strong> <?= htmlspecialchars($row['part1_contribution']) ?><br>
-                                <strong>Part 2 Contribution:</strong> <?= htmlspecialchars($row['part2_contribution']) ?><br>
-                                <span class="member-quote">"<?= htmlspecialchars($row['quote_original']) ?>"</span>
-                                <span class="quote-translation"><?= htmlspecialchars($row['quote_language']) ?> &mdash; Translation: "<?= htmlspecialchars($row['quote_translation']) ?>"</span>
+                                <strong>Role:</strong> <?= e($member['role']) ?>.<br>
+                                <strong>Part 1 Contribution:</strong> <?= e($member['part1_contribution']) ?><br>
+                                <strong>Part 2 Contribution:</strong> <?= e($member['part2_contribution']) ?><br>
+                                <span class="member-quote">"<?= e($member['quote_original']) ?>"</span>
+                                <span class="quote-translation"><?= e($member['quote_language']) ?> &mdash; Translation: "<?= e($member['quote_translation']) ?>"</span>
                             </dd>
-                            <?php
-                        }
-                        mysqli_free_result($result);
-                    } else {
-                        echo "<p class='error'>Failed to load team data from database.</p>";
-                    }
-                    ?>
-                </dl>
+                        <?php endforeach; ?>
+                    </dl>
+                <?php endif; ?>
             </section>
 
             <!-- GROUP PHOTO -->
@@ -111,7 +138,7 @@ include 'nav.inc';
                 <h2>Fun Facts About the Team</h2>
                 <div class="table-responsive">
                     <table class="fun-facts-table">
-                    <caption>Learn About Our SolarCore Team</caption>
+                        <caption>Learn About Our SolarCore Team</caption>
                         <thead>
                             <tr>
                                 <th>Member</th>
@@ -121,30 +148,14 @@ include 'nav.inc';
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Duong Danh Dat (Member A)</strong><br>(105928000)</td>
-                                <td>Japanese calligraphy</td>
-                                <td>CSS Grid + Figma</td>
-                                <td>Enjoys AI and AI development</td>
-                            </tr>
-                            <tr>
-                                <td><strong>James (Member B)</strong><br>(105901030)</td>
-                                <td>Baking</td>
-                                <td>Jira + VS Code</td>
-                                <td>Learning new languages</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Marksamuel (Member C)</strong><br>(105920006)</td>
-                                <td>Playing guitar</td>
-                                <td>Chrome DevTools</td>
-                                <td>Plays soccer on weekends</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Jose Leonardo (Member D)</strong><br>(103641855)</td>
-                                <td>Playing drums</td>
-                                <td>Visual Studio Code</td>
-                                <td>Bilingual (Spanish &amp; English)</td>
-                            </tr>
+                            <?php foreach ($funFacts as $fact): ?>
+                                <tr>
+                                    <td><strong><?= e($fact['name']) ?> (<?= e($fact['member']) ?>)</strong><br>(<?= e($fact['student_id']) ?>)</td>
+                                    <td><?= e($fact['hidden_talent']) ?></td>
+                                    <td><?= e($fact['favourite_tool']) ?></td>
+                                    <td><?= e($fact['fun_fact']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
