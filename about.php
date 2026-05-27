@@ -9,6 +9,7 @@ $page_title = "About Us - SolarCore Energy";
 $teamMembers = [];
 $teamLoadError = false;
 
+// funfacts table is a static page content stored in an array to avoid repeating tables
 $funFacts = [
     [
         'name' => 'Duong Danh Dat',
@@ -44,10 +45,7 @@ $funFacts = [
     ],
 ];
 
-function e($value) {
-    return htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8');
-}
-
+//sends SQL query to the database
 $result = mysqli_query($conn, "SELECT * FROM about ORDER BY member_id ASC");
 
 if ($result) {
@@ -105,13 +103,13 @@ include 'nav.inc';
                     <dl class="contrib-definition-list">
                         <?php foreach ($teamMembers as $member): ?>
                             <?php $memberLetter = chr(65 + ((int) $member['member_id'] - 1)); ?>
-                            <dt>Member <?= e($memberLetter) ?> &ndash; <?= e($member['full_name']) ?> (<?= e($member['student_id']) ?>)</dt>
+                            <dt>Member <?= htmlspecialchars($memberLetter) ?> &ndash; <?= htmlspecialchars($member['full_name']) ?> (<?= htmlspecialchars($member['student_id']) ?>)</dt>
                             <dd>
-                                <strong>Role:</strong> <?= e($member['role']) ?>.<br>
-                                <strong>Part 1 Contribution:</strong> <?= e($member['part1_contribution']) ?><br>
-                                <strong>Part 2 Contribution:</strong> <?= e($member['part2_contribution']) ?><br>
-                                <span class="member-quote">"<?= e($member['quote_original']) ?>"</span>
-                                <span class="quote-translation"><?= e($member['quote_language']) ?> &mdash; Translation: "<?= e($member['quote_translation']) ?>"</span>
+                                <strong>Role:</strong> <?= htmlspecialchars($member['role']) ?>.<br>
+                                <strong>Part 1 Contribution:</strong> <?= htmlspecialchars($member['part1_contribution']) ?><br>
+                                <strong>Part 2 Contribution:</strong> <?= htmlspecialchars($member['part2_contribution']) ?><br>
+                                <span class="member-quote">"<?= htmlspecialchars($member['quote_original']) ?>"</span>
+                                <span class="quote-translation"><?= htmlspecialchars($member['quote_language']) ?> &mdash; Translation: "<?= htmlspecialchars($member['quote_translation']) ?>"</span>
                             </dd>
                         <?php endforeach; ?>
                     </dl>
@@ -150,10 +148,10 @@ include 'nav.inc';
                         <tbody>
                             <?php foreach ($funFacts as $fact): ?>
                                 <tr>
-                                    <td><strong><?= e($fact['name']) ?> (<?= e($fact['member']) ?>)</strong><br>(<?= e($fact['student_id']) ?>)</td>
-                                    <td><?= e($fact['hidden_talent']) ?></td>
-                                    <td><?= e($fact['favourite_tool']) ?></td>
-                                    <td><?= e($fact['fun_fact']) ?></td>
+                                    <td><strong><?= htmlspecialchars($fact['name']) ?> (<?= htmlspecialchars($fact['member']) ?>)</strong><br>(<?= htmlspecialchars($fact['student_id']) ?>)</td>
+                                    <td><?= htmlspecialchars($fact['hidden_talent']) ?></td>
+                                    <td><?= htmlspecialchars($fact['favourite_tool']) ?></td>
+                                    <td><?= htmlspecialchars($fact['fun_fact']) ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

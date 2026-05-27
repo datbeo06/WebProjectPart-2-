@@ -1,0 +1,287 @@
+<?php
+// index.php
+// Homepage for SolarCore Energy
+// Group Nick-Thu-1030-G03
+
+$page_title = "SolarCore Energy — Powering tomorrow with clean energy";
+
+// Embedded CSS specific to index page
+$page_style = '
+    <style>
+        /* Hero badge — solar gold pill */
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.6);
+            color: #F59E0B;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Services table category rows */
+        .services-section {
+            background-color: #ECFDF5;
+            padding: 3.5rem 1.5rem;
+        }
+
+        /* Highlight box for key company stats */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding: 2rem 1.5rem;
+            background-color: #0F4C3A;
+            color: #ffffff;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F59E0B;
+            line-height: 1;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+    </style>
+';
+
+include 'header.inc';
+include 'nav.inc';
+?>
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+    <main>
+
+        <!-- HERO SECTION
+             Background-image set via CSS (.hero rule in styles.css) -->
+        <section class="hero" aria-label="Hero banner">
+            <div class="hero-content">
+                <span class="hero-badge">Renewable Energy Company</span>
+                <h1>Powering Australia's Clean Energy Future</h1>
+                <p class="hero-slogan">"Sustainable solutions for a brighter future."</p>
+                <p class="hero-description">
+                    SolarCore Energy designs, installs, and operates solar, wind, and hydro
+                    systems across Australia. We help homes, businesses, and communities
+                    transition to clean, reliable, and affordable renewable power.
+                </p>
+
+                <!-- Search box (connected to jobs.php search handler) -->
+                <form class="search-form" action="jobs.php" method="get" role="search" aria-label="Site search">
+                    <label for="site-search" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">
+                        Search SolarCore services and jobs
+                    </label>
+                    <input
+                        type="search"
+                        id="site-search"
+                        name="search"
+                        placeholder="e.g., solar panels, wind farm..."
+                        aria-label="Search SolarCore services and jobs"
+                    >
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- COMPANY STATS BAR -->
+        <div class="stats-bar" role="region" aria-label="Company statistics">
+            <div class="stat-item">
+                <span class="stat-number">450+</span>
+                <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7</span>
+                <span class="stat-label">Years in Industry</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">120MW</span>
+                <span class="stat-label">Clean Power Installed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+        </div>
+
+        <!-- ABOUT THE COMPANY -->
+        <section aria-labelledby="about-heading">
+            <div class="company-section">
+                <!-- Company image #1 -->
+                <img
+                    src="images/solar-hero.svg"
+                    alt="Stylised illustration of a residential rooftop with solar panels under a bright sun and orange sky"
+                    width="440"
+                    height="330"
+                    loading="lazy"
+                >
+                <div class="company-text">
+                    <h2 id="about-heading">Who We Are</h2>
+                    <p>
+                        SolarCore Energy is a Melbourne-based renewable energy company founded
+                        in 2018. Our mission is to make clean energy simple, affordable, and
+                        accessible for every Australian. With a team of engineers, technicians,
+                        and project managers, we deliver end-to-end solar, wind, and hydro
+                        systems across Victoria, New South Wales, and Queensland.
+                        We are growing our technology team to support our public-facing platforms.
+                        <a href="jobs.php">View open positions &rarr;</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE GALLERY — 3+ images on index page -->
+        <section class="section-padded" aria-labelledby="gallery-heading" style="background-color: #ECFDF5;">
+            <div class="section-container">
+                <h2 id="gallery-heading" class="section-title">What We Build</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+
+                    <figure style="flex: 1; min-width: 260px; max-width: 340px; margin: 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(15,76,58,0.08);">
+                        <img src="images/solar-panels.svg"
+                             alt="Top-down view of a utility-scale solar PV farm with rows of dark blue panels on green ground"
+                             width="340" height="255" loading="lazy"
+                             style="width: 100%; height: auto; display: block;">
+                        <figcaption style="padding: 1rem; font-size: 0.95rem; color: #1F2937; background-color: #fff; font-style: normal; text-align: left;">
+                             <strong style="color: #0F4C3A;">Commercial solar farms</strong> — Utility-scale photovoltaic arrays for businesses, schools, and councils.
+                        </figcaption>
+                    </figure>
+
+                    <figure style="flex: 1; min-width: 260px; max-width: 340px; margin: 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(15,76,58,0.08);">
+                        <img src="images/wind-turbines.svg"
+                             alt="Three wind turbines on rolling green hills under a soft blue sky with clouds"
+                             width="340" height="255" loading="lazy"
+                             style="width: 100%; height: auto; display: block;">
+                        <figcaption style="padding: 1rem; font-size: 0.95rem; color: #1F2937; background-color: #fff; font-style: normal; text-align: left;">
+                            <strong style="color: #0F4C3A;">Wind power systems</strong> — Small turbines for rural sites and feasibility studies for community wind farms.
+                        </figcaption>
+                    </figure>
+
+                    <figure style="flex: 1; min-width: 260px; max-width: 340px; margin: 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(15,76,58,0.08);">
+                        <img src="images/team-photo.jpg"
+                             alt="The SolarCore engineering team gathered at a project site in Melbourne"
+                             width="340" height="255" loading="lazy"
+                             style="width: 100%; height: 255px; object-fit: cover; display: block;">
+                        <figcaption style="padding: 1rem; font-size: 0.95rem; color: #1F2937; background-color: #fff; font-style: normal; text-align: left;">
+                            <strong style="color: #0F4C3A;">Our team</strong> — Local Melbourne engineers, technicians, and project managers passionate about clean energy.
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES TABLE
+             Uses colspan (header row) AND rowspan (category column) -->
+        <section class="services-section" aria-labelledby="services-heading">
+            <div class="section-container">
+                <h2 id="services-heading" class="section-title">Our Renewable Energy Services</h2>
+
+                <div class="table-wrapper">
+                    <table aria-label="SolarCore Energy services overview">
+                        <caption>SolarCore Energy &mdash; Service Offerings &amp; Indicative Pricing</caption>
+                        <thead>
+                            <tr>
+                                <th colspan="4" scope="colgroup">Clean Energy Solutions for Homes &amp; Businesses</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Category</th>
+                                <th scope="col">Service</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Starting From</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="category-cell" rowspan="3" scope="rowgroup">Solar</th>
+                                <td>Residential Solar PV</td>
+                                <td>Rooftop solar panel design, installation, and grid connection for Australian homes.</td>
+                                <td>AUD $4,500</td>
+                            </tr>
+                            <tr>
+                                <td>Commercial Solar</td>
+                                <td>Large-scale solar arrays for businesses, warehouses, and farms with monitoring software.</td>
+                                <td>AUD $25,000</td>
+                            </tr>
+                            <tr>
+                                <td>Battery Storage</td>
+                                <td>Lithium-ion battery systems to store excess solar power for night-time use.</td>
+                                <td>AUD $7,800</td>
+                            </tr>
+                            <tr>
+                                <th class="category-cell" rowspan="2" scope="rowgroup">Wind</th>
+                                <td>Small Wind Turbines</td>
+                                <td>Compact turbines for rural properties, off-grid sites, and agricultural applications.</td>
+                                <td>AUD $12,000</td>
+                            </tr>
+                            <tr>
+                                <td>Wind Farm Consulting</td>
+                                <td>Site assessment, feasibility studies, and grid connection planning for community wind projects.</td>
+                                <td>AUD $5,500</td>
+                            </tr>
+                            <tr>
+                                <th class="category-cell" rowspan="2" scope="rowgroup">Hydro</th>
+                                <td>Micro-Hydro Systems</td>
+                                <td>Small-scale run-of-river hydro generators for properties with creek or river access.</td>
+                                <td>AUD $18,000</td>
+                            </tr>
+                            <tr>
+                                <td>Maintenance &amp; Monitoring</td>
+                                <td>Ongoing service contracts, performance reporting, and remote monitoring of hydro plants.</td>
+                                <td>AUD $1,200/yr</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY JOIN US -->
+        <section class="section-padded" aria-labelledby="why-choose-heading">
+            <div class="section-container">
+                <h2 id="why-choose-heading" class="section-title">Why Choose SolarCore Energy?</h2>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem;">
+                    <div style="flex: 1; min-width: 220px; max-width: 300px; text-align: center; padding: 1.5rem; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(15,76,58,0.08); border-top: 4px solid #F59E0B;">
+                        <p style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">&#9728;&#65039;</p>
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Clean &amp; Reliable Power</h3>
+                        <p style="font-size: 0.9rem; color: #4B5563;">Australian-certified equipment, 25-year performance warranty, and 24/7 system monitoring.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 220px; max-width: 300px; text-align: center; padding: 1.5rem; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(15,76,58,0.08); border-top: 4px solid #10B981;">
+                        <p style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">&#127757;</p>
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Lower Bills, Lower Carbon</h3>
+                        <p style="font-size: 0.9rem; color: #4B5563;">Cut your electricity costs by up to 70% while reducing your household carbon footprint.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 220px; max-width: 300px; text-align: center; padding: 1.5rem; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(15,76,58,0.08); border-top: 4px solid #0F4C3A;">
+                        <p style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">&#128736;&#65039;</p>
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Local Expertise</h3>
+                        <p style="font-size: 0.9rem; color: #4B5563;">Melbourne-based engineers with deep knowledge of Australian climate, regulations, and rebates.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-2">
+                    <a href="jobs.php" style="display: inline-block; padding: 0.75rem 2rem; background-color: #F59E0B; color: #0F4C3A; border-radius: 6px; font-weight: 700; text-decoration: none;">
+                        View Open Positions
+                    </a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+<?php
+include 'footer.inc';
+?>
