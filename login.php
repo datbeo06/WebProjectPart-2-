@@ -8,12 +8,13 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Redirect immediately if already logged in
+// Redirect to manage.php if already logged in
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     header('Location: manage.php');
     exit;
 }
 
+//loads database connection
 require_once 'settings.php';
 
 $error = '';
