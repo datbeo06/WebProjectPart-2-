@@ -194,6 +194,10 @@ nav.site-nav ul li a.active {
     padding: 0 1.5rem;
 }
 
+.section-container.about-page-container {
+    padding: 2rem 1.5rem 3rem;
+}
+
 .section-padded {
     padding: 3.5rem 1.5rem;
 }
@@ -713,6 +717,10 @@ aside h3 {
     border-radius: 16px;
     margin: 0 0 2rem 0;
     border-left: 4px solid var(--accent);
+}
+
+.team-intro-title {
+    margin-top: 0;
 }
 
 .team-intro-card ul,
