@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360.9030000000002 1426.3999999999999" width="1360.9030000000002" height="1426.3999999999999" style="--bg:#1F1F1F;--fg:#CCCCCC;--line:#CCCCCC;--accent:#0078D4;--muted:#CCCCCCCC;--surface:#181818;--border:#CCCCCC;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="UI_Giao_Dien_Chung" data-label="Thành Phần Giao Diện Chung">
+  <rect x="309.6561666666668" y="40" width="499.876" height="173.8" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="309.6561666666668" y="40" width="499.876" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="321.6561666666668" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Thành Phần Giao Diện Chung</text>
+</g>
+<g class="subgraph" data-id="Luong_Ung_Vien" data-label="PHÂN VÙNG ỨNG VIÊN">
+  <rect x="390.4510083333334" y="426.1" width="325.5177" height="624.1" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="390.4510083333334" y="426.1" width="325.5177" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="402.4510083333334" y="440.1" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">PHÂN VÙNG ỨNG VIÊN</text>
+</g>
+<g class="subgraph" data-id="Luong_Admin" data-label="PHÂN VÙNG QUẢN TRỊ (HR)">
+  <rect x="919.1389833333335" y="596.2" width="357.333" height="454.00000000000006" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="919.1389833333335" y="596.2" width="357.333" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="931.1389833333335" y="610.2" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">PHÂN VÙNG QUẢN TRỊ (HR)</text>
+</g>
+<polyline class="edge" data-from="SETTING" data-to="DB" data-style="thick" data-arrow-start="false" data-arrow-end="true" data-label="5. Mở kết nối ($conn)" points="767.8037833333335,1202.3 767.8037833333335,1318.6" fill="none" stroke="var(--_line)" stroke-width="2" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Header" data-to="INDEX" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="421.30083333333346,137.8 421.30083333333346,315.8 499.5700000000001,315.8 499.5700000000001,408.1 529.7247083333334,408.1 529.7247083333333,470.1" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Header" data-to="JOBS" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="397.3896666666668,137.8 397.3896666666668,315.8 414.9560000000001,315.8 414.9560000000001,360.1 491.0089583333334,360.1 491.0089583333333,604.2 538.6687083333334,604.2 538.6687083333334,640.2" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Header" data-to="APPLY" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="373.47850000000017,137.8 373.47850000000017,161.8 375.4340833333335,161.8 375.4340833333335,303.8 245.72800000000004,303.8 245.72800000000004,384.1 455.5710083333334,384.1 455.5710083333333,786.3000000000001 494.2638583333333,786.3000000000001 494.2638583333333,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Header" data-to="MANAGE" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="445.21200000000016,137.8 445.21200000000016,185.8 744.123,185.8 744.123,255.8 1091.8680000000002,255.8 1091.8680000000002,578.2 1137.0453833333336,578.2 1137.0453833333336,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Header" data-to="PROCESS" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="349.56733333333347,137.8 349.56733333333347,279.8 76.5,279.8 76.5,408.1 406.4510083333334,408.1 406.4510083333333,956.4000000000001 452.3043083333333,956.4000000000001 452.3043083333333,980.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Nav" data-to="INDEX" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="664.7138333333335,137.8 664.7138333333335,161.8 614.37525,161.8 614.37525,315.8 668.798,315.8 668.798,360.1 585.1562083333333,360.1 585.1562083333333,470.1" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Nav" data-to="JOBS" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="690.4775000000002,137.8 690.4775000000002,291.8 838.0260000000001,291.8 838.0260000000001,384.1 646.5344583333333,384.1 646.5344583333333,604.2 641.6437083333333,604.2 641.6437083333333,640.2" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Nav" data-to="APPLY" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="716.2411666666668,137.8 716.2411666666667,279.8 922.6400000000001,279.8 922.6400000000001,396.1 685.9687083333333,396.1 685.9687083333333,786.3000000000001 589.2360583333334,786.3000000000001 589.2360583333334,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Nav" data-to="MANAGE" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="767.7685000000001,137.8 767.7685000000001,149.8 769.8866666666668,149.8 769.8866666666668,231.8 1261.0960000000002,231.8 1261.0960000000002,578.2 1219.3297833333336,578.2 1219.3297833333336,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Nav" data-to="PROCESS" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="742.0048333333334,137.8 742.0048333333334,161.8 734.123,161.8 734.123,267.8 1007.2540000000001,267.8 1007.2540000000001,408.1 698.9687083333333,408.1 698.9687083333333,956.4000000000001 541.0521083333333,956.4000000000001 541.0521083333333,980.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Footer" data-to="INDEX" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="554.0366666666669,137.8 554.0366666666669,315.8 584.1840000000002,315.8 584.1840000000002,408.1 557.4404583333335,408.1 557.4404583333333,470.1" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Footer" data-to="JOBS" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="573.0078333333335,137.8 573.0078333333335,173.8 624.37525,173.8 624.37525,303.8 753.412,303.8 753.412,372.1 622.8719583333334,372.1 622.8719583333333,604.2 607.3187083333332,604.2 607.3187083333332,640.2" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Footer" data-to="APPLY" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="535.0655000000002,137.8 535.0655000000002,161.8 387.3896666666668,161.8 387.3896666666668,315.8 330.34200000000004,315.8 330.34200000000004,372.1 477.8997083333334,372.1 477.8997083333333,774.3000000000001 525.9212583333333,774.3000000000001 525.9212583333333,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Footer" data-to="MANAGE" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="591.9790000000002,137.8 591.9790000000002,149.8 754.123,149.8 754.123,243.8 1176.4820000000002,243.8 1176.4820000000002,578.2 1178.1875833333336,578.2 1178.1875833333336,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INC_Footer" data-to="PROCESS" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Được nạp vào" points="516.0943333333335,137.8 516.0943333333335,149.8 365.4340833333335,149.8 365.4340833333335,291.8 161.11400000000003,291.8 161.11400000000003,396.1 427.7423083333334,396.1 427.7423083333333,944.4000000000001 481.8869083333333,944.4000000000001 481.8869083333333,980.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PROCESS" data-to="SETTING" data-style="thick" data-arrow-start="false" data-arrow-end="true" data-label="4. Nạp cấu hình" points="521.330375,1034.2 521.3303750000001,1092.2 559.5118750000001,1092.2 559.5118750000001,1136.5 740.3111166666669,1136.5 740.3111166666669,1148.5" fill="none" stroke="var(--_line)" stroke-width="2" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PROCESS" data-to="DB" data-style="thick" data-arrow-start="false" data-arrow-end="true" data-label="6. Ghi dữ liệu EOI" points="472.02604166666674,1034.2 472.0260416666668,1262.3 470.1782083333335,1262.3 470.1782083333335,1306.6 727.1205333333336,1306.6 727.1205333333336,1318.6" fill="none" stroke="var(--_line)" stroke-width="2" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="MANAGE" data-to="SETTING" data-style="thick" data-arrow-start="false" data-arrow-end="true" data-label="2. Nạp cấu hình" points="1106.1887333333336,864.1000000000001 1106.1887333333336,876.1000000000001 966.3633166666668,876.1000000000001 966.3633166666668,1136.5 795.2964500000002,1136.5 795.2964500000002,1148.5" fill="none" stroke="var(--_line)" stroke-width="2" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="MANAGE" data-to="DB" data-style="thick" data-arrow-start="false" data-arrow-end="true" data-label="3. Đọc / Cập nhật / Xóa EOI" points="1209.0442333333335,864.1000000000001 1209.0442333333335,1306.6 808.4870333333334,1306.6 808.4870333333334,1318.6" fill="none" stroke="var(--_line)" stroke-width="2" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="INDEX" data-to="JOBS" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="1. Xem công việc" points="557.4404583333334,523.9000000000001 557.4404583333335,604.2 572.9937083333334,604.2 572.9937083333334,640.2" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="JOBS" data-to="APPLY" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="2. Ứng tuyển" points="590.1562083333334,694 590.1562083333333,774.3000000000001 557.5786583333335,774.3000000000001 557.5786583333335,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="APPLY" data-to="PROCESS" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="3. Submit Form (POST)" points="541.7499583333334,864.1000000000001 541.7499583333333,944.4000000000001 511.4695083333334,944.4000000000001 511.4695083333334,980.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="LOGIN" data-to="MANAGE" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="1. Xác thực thành công" points="1051.3028500000003,694 1051.3028500000003,706 1070.1397166666668,706 1070.1397166666668,774.3000000000001 1095.9031833333336,774.3000000000001 1095.9031833333336,810.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="MANAGE" data-to="LOGOUT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="4. Đăng xuất" points="1157.6164833333335,864.1000000000001 1157.6164833333335,944.4000000000001 1155.8408166666668,944.4000000000001 1155.8408166666668,980.4000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="LOGOUT" data-to="LOGIN" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Chuyển hướng về" points="1120.3684833333336,980.4000000000001 1120.3684833333336,944.4000000000001 981.1389833333335,944.4000000000001 981.1389833333335,706 1001.7515166666668,706 1001.7515166666668,694" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="SETTING" data-to="DB" data-label="5. Mở kết nối ($conn)">
+  <rect x="711.3037833333335" y="1245.3" width="112.09600000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="767.3517833333335" y="1260.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">5. Mở kết nối ($conn)</text>
+</g>
+<g class="edge-label" data-from="INC_Header" data-to="INDEX" data-label="Được nạp vào">
+  <rect x="459.0700000000001" y="322.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="499.3770000000001" y="337.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Header" data-to="JOBS" data-label="Được nạp vào">
+  <rect x="374.4560000000001" y="322.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="414.7630000000001" y="337.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Header" data-to="APPLY" data-label="Được nạp vào">
+  <rect x="205.228" y="346.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="245.53500000000003" y="361.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Header" data-to="MANAGE" data-label="Được nạp vào">
+  <rect x="1051.3680000000002" y="516.9000000000001" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1091.6750000000002" y="532.0500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Header" data-to="PROCESS" data-label="Được nạp vào">
+  <rect x="36" y="370.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="76.307" y="385.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Nav" data-to="INDEX" data-label="Được nạp vào">
+  <rect x="628.298" y="322.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="668.605" y="337.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Nav" data-to="JOBS" data-label="Được nạp vào">
+  <rect x="797.5260000000001" y="346.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="837.8330000000001" y="361.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Nav" data-to="APPLY" data-label="Được nạp vào">
+  <rect x="882.1400000000001" y="358.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="922.4470000000001" y="373.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Nav" data-to="MANAGE" data-label="Được nạp vào">
+  <rect x="1220.5960000000002" y="516.9000000000001" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1260.9030000000002" y="532.0500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Nav" data-to="PROCESS" data-label="Được nạp vào">
+  <rect x="966.7540000000001" y="370.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1007.0610000000001" y="385.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Footer" data-to="INDEX" data-label="Được nạp vào">
+  <rect x="543.6840000000002" y="322.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="583.9910000000002" y="337.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Footer" data-to="JOBS" data-label="Được nạp vào">
+  <rect x="712.912" y="334.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="753.219" y="349.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Footer" data-to="APPLY" data-label="Được nạp vào">
+  <rect x="289.84200000000004" y="334.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="330.14900000000006" y="349.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Footer" data-to="MANAGE" data-label="Được nạp vào">
+  <rect x="1135.9820000000002" y="516.9000000000001" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1176.2890000000002" y="532.0500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="INC_Footer" data-to="PROCESS" data-label="Được nạp vào">
+  <rect x="120.61400000000005" y="358.8" width="80.614" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="160.92100000000005" y="373.95" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Được nạp vào</text>
+</g>
+<g class="edge-label" data-from="PROCESS" data-to="SETTING" data-label="4. Nạp cấu hình">
+  <rect x="513.5118750000001" y="1099.2" width="91.9" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="559.4618750000002" y="1114.3500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">4. Nạp cấu hình</text>
+</g>
+<g class="edge-label" data-from="PROCESS" data-to="DB" data-label="6. Ghi dữ liệu EOI">
+  <rect x="423.17820833333343" y="1269.3" width="93.682" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="470.01920833333344" y="1284.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">6. Ghi dữ liệu EOI</text>
+</g>
+<g class="edge-label" data-from="MANAGE" data-to="SETTING" data-label="2. Nạp cấu hình">
+  <rect x="920.3633166666668" y="1099.2" width="91.9" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="966.3133166666669" y="1114.3500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">2. Nạp cấu hình</text>
+</g>
+<g class="edge-label" data-from="MANAGE" data-to="DB" data-label="3. Đọc / Cập nhật / Xóa EOI">
+  <rect x="1140.0442333333335" y="1269.3" width="137.04399999999998" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1208.5662333333335" y="1284.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">3. Đọc / Cập nhật / Xóa EOI</text>
+</g>
+<g class="edge-label" data-from="INDEX" data-to="JOBS" data-label="1. Xem công việc">
+  <rect x="511.4404583333334" y="566.9000000000001" width="91.90000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="557.3904583333334" y="582.0500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">1. Xem công việc</text>
+</g>
+<g class="edge-label" data-from="JOBS" data-to="APPLY" data-label="2. Ứng tuyển">
+  <rect x="553.1562083333333" y="737.0000000000001" width="73.486" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="589.8992083333334" y="752.1500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">2. Ứng tuyển</text>
+</g>
+<g class="edge-label" data-from="APPLY" data-to="PROCESS" data-label="3. Submit Form (POST)">
+  <rect x="480.7499583333334" y="907.1" width="121.60000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="541.5499583333334" y="922.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">3. Submit Form (POST)</text>
+</g>
+<g class="edge-label" data-from="LOGIN" data-to="MANAGE" data-label="1. Xác thực thành công">
+  <rect x="1010.6397166666668" y="737.0000000000001" width="118.63000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1069.9547166666669" y="752.1500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">1. Xác thực thành công</text>
+</g>
+<g class="edge-label" data-from="MANAGE" data-to="LOGOUT" data-label="4. Đăng xuất">
+  <rect x="1120.6164833333337" y="907.1" width="73.486" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1157.3594833333336" y="922.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">4. Đăng xuất</text>
+</g>
+<g class="edge-label" data-from="LOGOUT" data-to="LOGIN" data-label="Chuyển hướng về">
+  <rect x="931.1389833333335" y="822.0500000000001" width="99.62200000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="980.9499833333335" y="837.2" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Chuyển hướng về</text>
+</g>
+<g class="node" data-id="SETTING" data-label="settings.php
+(Cấu hình kết nối DB)" data-shape="rectangle">
+  <rect x="685.3257833333334" y="1148.5" width="164.95600000000002" height="53.800000000000004" rx="0" ry="0" fill="#FEF3C7" stroke="#D97706" stroke-width="2px" />
+  <text x="767.8037833333335" y="1175.4" text-anchor="middle" font-size="13" font-weight="500" fill="#92400E"><tspan x="767.8037833333335" dy="-3.9000000000000012">settings.php</tspan><tspan x="767.8037833333335" dy="16.900000000000002">(Cấu hình kết nối DB)</tspan></text>
+</g>
+<g class="node" data-id="DB" data-label="Cơ sở dữ liệu MySQL
+(solarcore_db)" data-shape="cylinder">
+  <rect x="686.4372833333334" y="1325.6" width="162.733" height="53.80000000000001" fill="#E0F2FE" stroke="none" />
+  <line x1="686.4372833333334" y1="1325.6" x2="686.4372833333334" y2="1379.3999999999999" stroke="#0EA5E9" stroke-width="2px" />
+  <line x1="849.1702833333334" y1="1325.6" x2="849.1702833333334" y2="1379.3999999999999" stroke="#0EA5E9" stroke-width="2px" />
+  <ellipse cx="767.8037833333334" cy="1379.3999999999999" rx="81.3665" ry="7" fill="#E0F2FE" stroke="#0EA5E9" stroke-width="2px" />
+  <ellipse cx="767.8037833333334" cy="1325.6" rx="81.3665" ry="7" fill="#E0F2FE" stroke="#0EA5E9" stroke-width="2px" />
+  <text x="767.8037833333334" y="1352.5" text-anchor="middle" font-size="13" font-weight="500" fill="#0369A1"><tspan x="767.8037833333334" dy="-3.9000000000000012">Cơ sở dữ liệu MySQL</tspan><tspan x="767.8037833333334" dy="16.900000000000002">(solarcore_db)</tspan></text>
+</g>
+<g class="node" data-id="INC_Header" data-label="header.inc
+(Đầu trang &amp; CSS)" data-shape="rectangle">
+  <rect x="325.6561666666668" y="84" width="143.46699999999998" height="53.800000000000004" rx="0" ry="0" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2px" />
+  <text x="397.3896666666668" y="110.9" text-anchor="middle" font-size="13" font-weight="500" fill="#374151"><tspan x="397.3896666666668" dy="-3.9000000000000012">header.inc</tspan><tspan x="397.3896666666668" dy="16.900000000000002">(Đầu trang &amp; CSS)</tspan></text>
+</g>
+<g class="node" data-id="INC_Nav" data-label="nav.inc
+(Thanh điều hướng)" data-shape="rectangle">
+  <rect x="638.9501666666667" y="84" width="154.582" height="53.800000000000004" rx="0" ry="0" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2px" />
+  <text x="716.2411666666667" y="110.9" text-anchor="middle" font-size="13" font-weight="500" fill="#374151"><tspan x="716.2411666666667" dy="-3.9000000000000012">nav.inc</tspan><tspan x="716.2411666666667" dy="16.900000000000002">(Thanh điều hướng)</tspan></text>
+</g>
+<g class="node" data-id="INC_Footer" data-label="footer.inc
+(Chân trang)" data-shape="rectangle">
+  <rect x="497.1231666666668" y="84" width="113.827" height="53.800000000000004" rx="0" ry="0" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2px" />
+  <text x="554.0366666666669" y="110.9" text-anchor="middle" font-size="13" font-weight="500" fill="#374151"><tspan x="554.0366666666669" dy="-3.9000000000000012">footer.inc</tspan><tspan x="554.0366666666669" dy="16.900000000000002">(Chân trang)</tspan></text>
+</g>
+<g class="node" data-id="INDEX" data-label="index.php
+(Trang chủ)" data-shape="rectangle">
+  <rect x="502.0089583333334" y="470.1" width="110.863" height="53.800000000000004" rx="0" ry="0" fill="#ECFDF5" stroke="#10B981" stroke-width="2px" />
+  <text x="557.4404583333334" y="497" text-anchor="middle" font-size="13" font-weight="500" fill="#065F46"><tspan x="557.4404583333334" dy="-3.9000000000000012">index.php</tspan><tspan x="557.4404583333334" dy="16.900000000000002">(Trang chủ)</tspan></text>
+</g>
+<g class="node" data-id="JOBS" data-label="jobs.php
+(Danh sách công việc)" data-shape="rectangle">
+  <rect x="504.34370833333344" y="640.2" width="171.62499999999997" height="53.800000000000004" rx="0" ry="0" fill="#ECFDF5" stroke="#10B981" stroke-width="2px" />
+  <text x="590.1562083333334" y="667.1" text-anchor="middle" font-size="13" font-weight="500" fill="#065F46"><tspan x="590.1562083333334" dy="-3.9000000000000012">jobs.php</tspan><tspan x="590.1562083333334" dy="16.900000000000002">(Danh sách công việc)</tspan></text>
+</g>
+<g class="node" data-id="APPLY" data-label="apply.php
+(Form điền thông tin)" data-shape="rectangle">
+  <rect x="462.6064583333334" y="810.3000000000001" width="158.287" height="53.800000000000004" rx="0" ry="0" fill="#ECFDF5" stroke="#10B981" stroke-width="2px" />
+  <text x="541.7499583333334" y="837.2" text-anchor="middle" font-size="13" font-weight="500" fill="#065F46"><tspan x="541.7499583333334" dy="-3.9000000000000012">apply.php</tspan><tspan x="541.7499583333334" dy="16.900000000000002">(Form điền thông tin)</tspan></text>
+</g>
+<g class="node" data-id="PROCESS" data-label="process_eoi.php
+(Xử lý &amp; Validation)" data-shape="rectangle">
+  <rect x="422.72170833333337" y="980.4000000000001" width="147.913" height="53.800000000000004" rx="0" ry="0" fill="#FEF3C7" stroke="#D97706" stroke-width="2px" />
+  <text x="496.6782083333334" y="1007.3000000000001" text-anchor="middle" font-size="13" font-weight="500" fill="#92400E"><tspan x="496.6782083333334" dy="-3.9000000000000012">process_eoi.php</tspan><tspan x="496.6782083333334" dy="16.900000000000002">(Xử lý &amp; Validation)</tspan></text>
+</g>
+<g class="node" data-id="LOGIN" data-label="login.php
+(Đăng nhập Admin)" data-shape="rectangle">
+  <rect x="952.2001833333335" y="640.2" width="148.654" height="53.800000000000004" rx="0" ry="0" fill="#ECFDF5" stroke="#10B981" stroke-width="2px" />
+  <text x="1026.5271833333336" y="667.1" text-anchor="middle" font-size="13" font-weight="500" fill="#065F46"><tspan x="1026.5271833333336" dy="-3.9000000000000012">login.php</tspan><tspan x="1026.5271833333336" dy="16.900000000000002">(Đăng nhập Admin)</tspan></text>
+</g>
+<g class="node" data-id="MANAGE" data-label="manage.php
+(Trang quản trị Dashboard)" data-shape="rectangle">
+  <rect x="1054.7609833333336" y="810.3000000000001" width="205.711" height="53.800000000000004" rx="0" ry="0" fill="#FEF3C7" stroke="#D97706" stroke-width="2px" />
+  <text x="1157.6164833333337" y="837.2" text-anchor="middle" font-size="13" font-weight="500" fill="#92400E"><tspan x="1157.6164833333337" dy="-3.9000000000000012">manage.php</tspan><tspan x="1157.6164833333337" dy="16.900000000000002">(Trang quản trị Dashboard)</tspan></text>
+</g>
+<g class="node" data-id="LOGOUT" data-label="logout.php
+(Đăng xuất)" data-shape="rectangle">
+  <rect x="1084.8961500000003" y="980.4000000000001" width="106.41699999999999" height="53.800000000000004" rx="0" ry="0" fill="#FEF3C7" stroke="#D97706" stroke-width="2px" />
+  <text x="1138.1046500000002" y="1007.3000000000001" text-anchor="middle" font-size="13" font-weight="500" fill="#92400E"><tspan x="1138.1046500000002" dy="-3.9000000000000012">logout.php</tspan><tspan x="1138.1046500000002" dy="16.900000000000002">(Đăng xuất)</tspan></text>
+</g>
+</svg>

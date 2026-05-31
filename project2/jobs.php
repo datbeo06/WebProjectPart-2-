@@ -1,6 +1,6 @@
 <?php
 // jobs.php
-// Jobs directory displaying active positions and handling keyword searches
+// Jobs directory displaying all active positions
 // Group Nick-Thu-1030-G03
 
 $page_title = "Jobs — SolarCore Energy";
@@ -35,9 +35,6 @@ include 'header.inc';
 include 'nav.inc';
 
 require_once 'settings.php';
-
-// Retrieve and sanitize search term if provided
-$search_term = isset($_GET['search']) ? trim($_GET['search']) : '';
 ?>
 
     <main class="content-container">
@@ -57,13 +54,10 @@ $search_term = isset($_GET['search']) ? trim($_GET['search']) : '';
 
         <!-- JOB SEARCH SECTION -->
         <section class="jobs-search-section" style="background-color: #ECFDF5; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #F59E0B; box-shadow: 0 2px 10px rgba(15,76,58,0.05);">
-            <form method="GET" action="jobs.php" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <form method="POST" action="search.php" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
                 <label for="search" style="font-weight: 700; color: #0F4C3A; font-size: 1.05rem;">Search Positions:</label>
-                <input type="text" id="search" name="search" placeholder="e.g. Developer, Engineer, Analyst, SC001..." value="<?= htmlspecialchars($search_term) ?>" style="flex: 1; min-width: 200px; padding: 0.6rem 1rem; border: 1px solid #10B981; border-radius: 4px; font-size: 1rem;">
+                <input type="text" id="search" name="search" placeholder="e.g. Developer, Engineer, Analyst, SC001..." style="flex: 1; min-width: 200px; padding: 0.6rem 1rem; border: 1px solid #10B981; border-radius: 4px; font-size: 1rem;">
                 <button type="submit" style="background-color: #0F4C3A; color: white; border: none; padding: 0.6rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: background 0.2s;">Search</button>
-                <?php if (!empty($search_term)): ?>
-                    <a href="jobs.php" style="color: #D97706; text-decoration: none; font-weight: 600; margin-left: 0.5rem; transition: color 0.2s;">Clear Search</a>
-                <?php endif; ?>
             </form>
         </section>
 
@@ -86,16 +80,9 @@ $search_term = isset($_GET['search']) ? trim($_GET['search']) : '';
 
         <!-- JOB CARDS — Dynamic database rendering -->
         <?php
-        // Build search query safely with prepared statements
-        if ($search_term !== '') {
-            $query = "SELECT * FROM jobs WHERE title LIKE ? OR description LIKE ? OR job_ref = ?";
-            $stmt = mysqli_prepare($conn, $query);
-            $like_term = "%" . $search_term . "%";
-            mysqli_stmt_bind_param($stmt, "sss", $like_term, $like_term, $search_term);
-        } else {
-            $query = "SELECT * FROM jobs ORDER BY job_ref ASC";
-            $stmt = mysqli_prepare($conn, $query);
-        }
+        // Fetch all jobs from database
+        $query = "SELECT * FROM jobs ORDER BY job_ref ASC";
+        $stmt = mysqli_prepare($conn, $query);
 
         if ($stmt) {
             mysqli_stmt_execute($stmt);
@@ -164,11 +151,11 @@ $search_term = isset($_GET['search']) ? trim($_GET['search']) : '';
                 }
             } else {
                 ?>
-                <section class="job-card" style="text-align: center; padding: 3rem 1rem; border-left: 4px solid #EF4444;">
-                    <h2 style="color: #EF4444;">No Positions Found</h2>
-                    <p style="color: #4B5563; font-size: 1.1rem; margin-top: 0.5rem;">We couldn't find any job matches for "<strong><?= htmlspecialchars($search_term) ?></strong>".</p>
+                <section class="job-card" style="text-align: center; padding: 3rem 1rem; border-left: 4px solid #F59E0B;">
+                    <h2 style="color: #F59E0B;">No Positions Available</h2>
+                    <p style="color: #4B5563; font-size: 1.1rem; margin-top: 0.5rem;">We currently have no open positions, but we encourage you to check back regularly for new opportunities.</p>
                     <p style="margin-top: 1.5rem;">
-                        <a href="jobs.php" style="display: inline-block; padding: 0.6rem 1.5rem; background-color: #0F4C3A; color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">Browse All Jobs</a>
+                        <a href="apply.php" style="display: inline-block; padding: 0.6rem 1.5rem; background-color: #0F4C3A; color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">Learn More About SolarCore</a>
                     </p>
                 </section>
                 <?php

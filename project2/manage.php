@@ -108,6 +108,259 @@ $sql_query .= " ORDER BY $sort_by ASC";
 // 5. Compile layout options
 $page_title = "HR Dashboard — SolarCore Energy";
 
+$page_style = '
+    <style>
+        .dashboard-container {
+            max-width: 1250px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E5E7EB;
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dashboard-header h2 {
+            color: #0F4C3A;
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .user-badge {
+            background-color: #ECFDF5;
+            color: #0F4C3A;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid #10B981;
+        }
+
+        .admin-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(15, 76, 58, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-top: 4px solid #0F4C3A;
+        }
+
+        .admin-card h3 {
+            color: #0F4C3A;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .filter-group label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #374151;
+        }
+
+        .filter-group input, .filter-group select {
+            padding: 0.55rem 0.8rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .filter-group input:focus, .filter-group select:focus {
+            outline: none;
+            border-color: #10B981;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-admin {
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-filter {
+            background-color: #0F4C3A;
+            color: white;
+        }
+
+        .btn-filter:hover {
+            background-color: #10B981;
+        }
+
+        .btn-delete {
+            background-color: #EF4444;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background-color: #DC2626;
+        }
+        
+        .btn-clear {
+            background-color: #9CA3AF;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .btn-clear:hover {
+            background-color: #4B5563;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background-color: #ECFDF5;
+            color: #065F46;
+            border-left-color: #10B981;
+        }
+
+        .alert-error {
+            background-color: #FEF2F2;
+            color: #991B1B;
+            border-left-color: #EF4444;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+
+        .admin-table th {
+            background-color: #F9FAFB;
+            color: #374151;
+            font-weight: 700;
+            padding: 0.85rem 1rem;
+            border-bottom: 2px solid #E5E7EB;
+            white-space: nowrap;
+        }
+
+        .admin-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid #E5E7EB;
+            vertical-align: middle;
+            color: #4B5563;
+        }
+
+        .admin-table tr:hover {
+            background-color: #F9FAFB;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .status-New {
+            background-color: #FEF3C7;
+            color: #D97706;
+            border: 1px solid #F59E0B;
+        }
+
+        .status-Current {
+            background-color: #D1FAE5;
+            color: #065F46;
+            border: 1px solid #10B981;
+        }
+
+        .status-Final {
+            background-color: #E0F2FE;
+            color: #0369A1;
+            border: 1px solid #0EA5E9;
+        }
+
+        .update-form {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+
+        .update-form select {
+            padding: 0.35rem 0.5rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background: white;
+        }
+
+        .btn-update {
+            background-color: #F59E0B;
+            color: #0F4C3A;
+            border: 1px solid #D97706;
+            padding: 0.35rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-update:hover {
+            background-color: #0F4C3A;
+            color: white;
+            border-color: #0F4C3A;
+        }
+    </style>
+';
 
 include 'header.inc';
 include 'nav.inc';
