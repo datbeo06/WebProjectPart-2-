@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$page_title = "Manager Login — SolarCore Energy";
+$page_title = "Manager Login - SolarCore Energy";
 
 $page_style = '
     <style>
