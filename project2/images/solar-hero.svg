@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-labelledby="solar-hero-title solar-hero-desc">
+  <title id="solar-hero-title">Solar panel array on a sunny rooftop</title>
+  <desc id="solar-hero-desc">Stylised illustration of a residential solar PV system: rows of dark blue solar panels installed on a tilted roof, with a bright golden sun and orange-tinted sky in the background.</desc>
+
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="solarSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFEDD5"/>
+      <stop offset="60%" stop-color="#FED7AA"/>
+      <stop offset="100%" stop-color="#FCD34D"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="220" fill="url(#solarSky)"/>
+
+  <!-- Sun -->
+  <g transform="translate(310,70)">
+    <circle r="36" fill="#F59E0B" opacity="0.4"/>
+    <circle r="28" fill="#F59E0B"/>
+    <circle r="20" fill="#FBBF24"/>
+  </g>
+
+  <!-- Distant hills -->
+  <path d="M0,200 Q80,160 160,180 T320,170 T400,185 L400,220 L0,220 Z" fill="#10B981" opacity="0.55"/>
+  <path d="M0,210 Q100,180 200,200 T400,205 L400,220 L0,220 Z" fill="#0F4C3A" opacity="0.6"/>
+
+  <!-- Ground -->
+  <rect y="220" width="400" height="80" fill="#374151"/>
+
+  <!-- House roof (tilted) -->
+  <polygon points="60,220 200,150 340,220" fill="#7C2D12"/>
+  <polygon points="60,220 200,150 200,220" fill="#9A3412"/>
+
+  <!-- Solar panels on roof: 3 rows x 4 cells, tilted with the roof -->
+  <g transform="translate(90,168) rotate(-26)">
+    <!-- Panel frame -->
+    <rect x="0" y="0" width="160" height="52" fill="url(#panelGrad)" stroke="#0F172A" stroke-width="2"/>
+    <!-- Cell grid -->
+    <g stroke="#3B82F6" stroke-width="0.8" opacity="0.55">
+      <line x1="40" y1="0" x2="40" y2="52"/>
+      <line x1="80" y1="0" x2="80" y2="52"/>
+      <line x1="120" y1="0" x2="120" y2="52"/>
+      <line x1="0" y1="17" x2="160" y2="17"/>
+      <line x1="0" y1="34" x2="160" y2="34"/>
+    </g>
+    <!-- Reflection highlight -->
+    <polygon points="0,0 25,0 12,52 0,52" fill="#60A5FA" opacity="0.18"/>
+  </g>
+</svg>

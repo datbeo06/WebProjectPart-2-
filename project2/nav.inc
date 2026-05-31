@@ -24,8 +24,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
             <li><a href="manage.php" <?php if ($current_page === 'manage.php') { echo 'class="active" aria-current="page"'; } ?>>Manage</a></li>
             <li><a href="logout.php">Logout</a></li>
-        <?php else: ?>
-            <li><a href="login.php" <?php if ($current_page === 'login.php') { echo 'class="active" aria-current="page"'; } ?>>Login</a></li>
         <?php endif; ?>
     </ul>
 </nav>
+

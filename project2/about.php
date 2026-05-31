@@ -3,38 +3,37 @@
 // About Us page dynamically loading contributions from database
 // Group Nick-Thu-1030-G03
 
-//loads the database connection
-require_once 'settings.php';
+$page_title = "About Us — SolarCore Energy";
 
-$page_title = "About Us - SolarCore Energy";
-$teamMembers = [];
-$teamLoadError = false;
+$page_style = '
+    <style>
+        .about-header-title {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
 
-//sends SQL query to the database
-$result = mysqli_query($conn, "SELECT * FROM about ORDER BY member_id ASC");
-
-//Checks if the query worked then fetches all rows and stores them in $teamMembers
-if ($result) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $teamMembers[] = $row;
-    }
-
-    mysqli_free_result($result);
-} else {
-    $teamLoadError = true;
-}
+        @media (max-width: 700px) {
+            .about-header-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+';
 
 include 'header.inc';
 include 'nav.inc';
 ?>
 
     <main>
-        <div class="section-container about-page-container">
+        <div class="section-container" style="padding: 2rem 1.5rem 3rem;">
 
             <!-- TEAM IDENTITY, GROUP NAME + CLASS DAY/TIME -->
             <section class="about-section">
                 <div class="team-intro-card">
-                    <h2 class="team-intro-title">Team Identity &mdash; Group G03</h2>
+                    <h2 style="margin-top: 0;">Team Identity &mdash; Group G03</h2>
                     <!-- Nested list requirement -->
                     <ul>
                         <li><strong>Class:</strong> Nick &mdash; Thursday 10:30 &mdash; Group G03</li>
@@ -57,29 +56,39 @@ include 'nav.inc';
                 </div>
             </section>
 
-            <!-- MEMBER CONTRIBUTIONS & QUOTES - Dynamically Loaded from DB -->
+            <!-- MEMBER CONTRIBUTIONS & QUOTES — Dynamically Loaded from DB -->
             <section class="about-section">
                 <h2>Meet the Team</h2>
                 <p>Each member independently developed one complete page including its CSS. Below are individual contributions and personal quotes in native languages with English translation loaded dynamically from the database.</p>
 
-                <?php if ($teamLoadError): ?>
-                    <p class="error">Failed to load team data from database.</p>
-                <?php else: ?>
-                    <!-- Definition list (dl/dt/dd) loaded dynamically -->
-                    <dl class="contrib-definition-list">
-                        <?php foreach ($teamMembers as $member): ?>
-                            <?php $memberLetter = chr(65 + ((int) $member['member_id'] - 1)); ?>
-                            <dt>Member <?= htmlspecialchars($memberLetter) ?> &ndash; <?= htmlspecialchars($member['full_name']) ?> (<?= htmlspecialchars($member['student_id']) ?>)</dt>
+                <!-- Definition list (dl/dt/dd) loaded dynamically -->
+                <dl class="contrib-definition-list">
+                    <?php
+                    require_once 'settings.php';
+                    
+                    $query = "SELECT * FROM about ORDER BY member_id ASC";
+                    $result = mysqli_query($conn, $query);
+                    
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $member_label = "Member " . chr(65 + ($row['member_id'] - 1)) . " &ndash; " . htmlspecialchars($row['full_name']) . " (" . htmlspecialchars($row['student_id']) . ")";
+                            ?>
+                            <dt><?= $member_label ?></dt>
                             <dd>
-                                <strong>Role:</strong> <?= htmlspecialchars($member['role']) ?>.<br>
-                                <strong>Part 1 Contribution:</strong> <?= htmlspecialchars($member['part1_contribution']) ?><br>
-                                <strong>Part 2 Contribution:</strong> <?= htmlspecialchars($member['part2_contribution']) ?><br>
-                                <span class="member-quote">"<?= htmlspecialchars($member['quote_original']) ?>"</span>
-                                <span class="quote-translation"><?= htmlspecialchars($member['quote_language']) ?> &mdash; Translation: "<?= htmlspecialchars($member['quote_translation']) ?>"</span>
+                                <strong>Role:</strong> <?= htmlspecialchars($row['role']) ?>.<br>
+                                <strong>Part 1 Contribution:</strong> <?= htmlspecialchars($row['part1_contribution']) ?><br>
+                                <strong>Part 2 Contribution:</strong> <?= htmlspecialchars($row['part2_contribution']) ?><br>
+                                <span class="member-quote">"<?= htmlspecialchars($row['quote_original']) ?>"</span>
+                                <span class="quote-translation"><?= htmlspecialchars($row['quote_language']) ?> &mdash; Translation: "<?= htmlspecialchars($row['quote_translation']) ?>"</span>
                             </dd>
-                        <?php endforeach; ?>
-                    </dl>
-                <?php endif; ?>
+                            <?php
+                        }
+                        mysqli_free_result($result);
+                    } else {
+                        echo "<p class='error'>Failed to load team data from database.</p>";
+                    }
+                    ?>
+                </dl>
             </section>
 
             <!-- GROUP PHOTO -->
@@ -102,7 +111,7 @@ include 'nav.inc';
                 <h2>Fun Facts About the Team</h2>
                 <div class="table-responsive">
                     <table class="fun-facts-table">
-                        <caption>Learn About Our SolarCore Team</caption>
+                    <caption>Learn About Our SolarCore Team</caption>
                         <thead>
                             <tr>
                                 <th>Member</th>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-labelledby="wind-title wind-desc">
+  <title id="wind-title">Wind turbines on rolling green hills</title>
+  <desc id="wind-desc">Stylised illustration of three white wind turbines spinning on grassy hills under a bright blue sky with soft clouds.</desc>
+
+  <defs>
+    <linearGradient id="windSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#A7F3D0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="220" fill="url(#windSky)"/>
+
+  <!-- Clouds -->
+  <g fill="#FFFFFF" opacity="0.85">
+    <ellipse cx="80" cy="60" rx="32" ry="10"/>
+    <ellipse cx="100" cy="55" rx="22" ry="9"/>
+    <ellipse cx="290" cy="40" rx="40" ry="11"/>
+    <ellipse cx="320" cy="50" rx="20" ry="8"/>
+  </g>
+
+  <!-- Sun (small) -->
+  <circle cx="350" cy="80" r="18" fill="#F59E0B" opacity="0.85"/>
+
+  <!-- Hills -->
+  <path d="M0,200 Q80,150 180,180 T400,190 L400,300 L0,300 Z" fill="#10B981" opacity="0.65"/>
+  <path d="M0,220 Q120,185 240,210 T400,215 L400,300 L0,300 Z" fill="#0F4C3A"/>
+
+  <!-- Ground texture lines -->
+  <g stroke="#065F46" stroke-width="1" opacity="0.4">
+    <line x1="40" y1="240" x2="80" y2="245"/>
+    <line x1="180" y1="255" x2="220" y2="258"/>
+    <line x1="280" y1="245" x2="320" y2="248"/>
+  </g>
+
+  <!-- Wind turbine helper: tower + 3 blades around hub -->
+  <!-- Turbine 1 (back, smaller) -->
+  <g transform="translate(120,170)">
+    <rect x="-3" y="0" width="6" height="70" fill="#F3F4F6"/>
+    <g transform="rotate(15)">
+      <ellipse cx="0" cy="-30" rx="4" ry="28" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="0.8"/>
+      <ellipse cx="-26" cy="15" rx="28" ry="4" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="0.8" transform="rotate(60 -26 15)"/>
+      <ellipse cx="26" cy="15" rx="28" ry="4" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="0.8" transform="rotate(-60 26 15)"/>
+    </g>
+    <circle r="5" fill="#0F4C3A"/>
+  </g>
+
+  <!-- Turbine 2 (front, large) -->
+  <g transform="translate(220,150)">
+    <rect x="-4" y="0" width="8" height="100" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="0.5"/>
+    <g transform="rotate(-25)">
+      <ellipse cx="0" cy="-42" rx="5" ry="40" fill="#FFFFFF" stroke="#6B7280" stroke-width="1"/>
+      <ellipse cx="-36" cy="21" rx="40" ry="5" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" transform="rotate(60 -36 21)"/>
+      <ellipse cx="36" cy="21" rx="40" ry="5" fill="#FFFFFF" stroke="#6B7280" stroke-width="1" transform="rotate(-60 36 21)"/>
+    </g>
+    <circle r="6" fill="#0F4C3A"/>
+  </g>
+
+  <!-- Turbine 3 (right, medium) -->
+  <g transform="translate(320,180)">
+    <rect x="-3" y="0" width="6" height="80" fill="#F3F4F6"/>
+    <g transform="rotate(45)">
+      <ellipse cx="0" cy="-34" rx="4" ry="32" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="0.8"/>
+      <ellipse cx="-29" cy="17" rx="32" ry="4" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="0.8" transform="rotate(60 -29 17)"/>
+      <ellipse cx="29" cy="17" rx="32" ry="4" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="0.8" transform="rotate(-60 29 17)"/>
+    </g>
+    <circle r="5" fill="#0F4C3A"/>
+  </g>
+</svg>
