@@ -94,19 +94,19 @@ $job_ref_prefill = isset($_GET['ref']) ? trim($_GET['ref']) : '';
                     <div class="form-group">
                         <label for="job_ref">Job Reference Number:</label>
                         <input type="text" id="job_ref" name="job_ref" 
-                                placeholder="e.g. WD001 or SE002"
+                               maxlength="5" placeholder="e.g. WD001 or SE002"
                                value="<?= htmlspecialchars($job_ref_prefill) ?>">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="first_name">First Name:</label>
-                            <input type="text" id="first_name" name="first_name">
+                            <input type="text" id="first_name" name="first_name" maxlength="20">
                         </div>
 
                         <div class="form-group">
                             <label for="last_name">Last Name:</label>
-                            <input type="text" id="last_name" name="last_name">
+                            <input type="text" id="last_name" name="last_name" maxlength="20">
                         </div>
                     </div>
 
@@ -127,12 +127,12 @@ $job_ref_prefill = isset($_GET['ref']) ? trim($_GET['ref']) : '';
 
                     <div class="form-group">
                         <label for="street">Street Address:</label>
-                        <input type="text" id="street" name="street" >
+                        <input type="text" id="street" name="street" maxlength="40">
                     </div>
 
                     <div class="form-group">
                         <label for="suburb">Suburb/Town:</label>
-                        <input type="text" id="suburb" name="suburb">
+                        <input type="text" id="suburb" name="suburb" maxlength="40">
                     </div>
 
                     <div class="form-group">
@@ -152,7 +152,7 @@ $job_ref_prefill = isset($_GET['ref']) ? trim($_GET['ref']) : '';
 
                     <div class="form-group">
                         <label for="postcode">Postcode:</label>
-                        <input type="text" id="postcode" name="postcode">
+                        <input type="text" id="postcode" name="postcode" maxlength="4">
                     </div>
 
                     <div class="form-group">
@@ -163,7 +163,7 @@ $job_ref_prefill = isset($_GET['ref']) ? trim($_GET['ref']) : '';
 
                     <div class="form-group">
                         <label for="phone">Phone Number:</label>
-                        <input type="text" id="phone" name="phone" placeholder="e.g. 0412 345 678">
+                        <input type="text" id="phone" name="phone" maxlength="12" placeholder="e.g. 0412 345 678">
                     </div>
 
                     <fieldset>
@@ -182,8 +182,8 @@ $job_ref_prefill = isset($_GET['ref']) ? trim($_GET['ref']) : '';
 
                     <div class="form-group">
                         <label for="other_skills">Other Skills (optional):</label>
-                        <textarea id="other_skills" name="other_skills"
-                                  placeholder="Tell us about any additional relevant experience or qualifications."></textarea>
+                        <textarea id="other_skills" name="other_skills" maxlength="500"
+                                  placeholder="Tell us about any additional relevant experience or qualifications (max 500 characters)."></textarea>
                     </div>
 
                     <button type="submit" class="btn-submit">Submit Application</button>
