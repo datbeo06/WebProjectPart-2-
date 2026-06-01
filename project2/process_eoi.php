@@ -144,13 +144,18 @@ if ($street === '') {
     $errors['street'] = 'Street address is required.';
 } else if (strlen($street) > 40) {
     $errors['street'] = 'Street address cannot exceed 40 characters.';
+} else if (preg_match('/^[0-9]+$/', $street)) {
+    $errors['street'] = 'Street address cannot contain only numbers.';
 }
+
 
 // Validate Suburb/Town: Max 40 characters
 if ($suburb === '') {
     $errors['suburb'] = 'Suburb/town is required.';
 } else if (strlen($suburb) > 40) {
     $errors['suburb'] = 'Suburb/town cannot exceed 40 characters.';
+} else if (preg_match('/^[0-9]+$/', $suburb)) {
+    $errors['suburb'] = 'Suburb/town cannot contain only numbers.';
 }
 
 // Validate State: Must be VIC, NSW, QLD, WA, SA, TAS, ACT, NT
@@ -223,7 +228,7 @@ if ($email === '') {
 }
 
 // Validate Phone Number: 8 to 12 digits (ignore spaces)
-$phone_clean = str_replace(' ', '', $phone);
+$phone_clean = preg_replace('/\s+/', '', $phone);
 if ($phone === '') {
     $errors['phone'] = 'Phone number is required.';
 } else if (!preg_match('/^\d{8,12}$/', $phone_clean)) {
@@ -233,6 +238,49 @@ if ($phone === '') {
 // Validate Skills: Must select at least one checkbox skill
 if (empty($skills_sanitized)) {
     $errors['skills'] = 'You must select at least one skill checkbox.';
+}
+
+// Validate Other Skills length
+if (strlen($other_skills) > 200) {
+    $errors['other_skills'] = 'Other skills must not exceed 200 characters.';
+} else if (preg_match('/^[0-9]+$/', $other_skills)) {
+    $errors['other_skills'] = 'Other skills cannot contain only numbers.';
+}
+
+// Check for duplicate applications
+if (empty($errors)) {
+
+    $duplicate_stmt = mysqli_prepare(
+        $conn,
+        "SELECT EOInumber
+         FROM eoi
+         WHERE first_name = ?
+         AND last_name = ?
+         AND email = ?
+         AND job_ref = ?"
+    );
+
+    if ($duplicate_stmt) {
+
+        mysqli_stmt_bind_param(
+            $duplicate_stmt,
+            "ssss",
+            $first_name,
+            $last_name,
+            $email,
+            $job_ref
+        );
+
+        mysqli_stmt_execute($duplicate_stmt);
+        mysqli_stmt_store_result($duplicate_stmt);
+
+        if (mysqli_stmt_num_rows($duplicate_stmt) > 0) {
+            $errors['duplicate'] =
+                'An application already exists for this applicant and job reference.';
+        }
+
+        mysqli_stmt_close($duplicate_stmt);
+    }
 }
 
 // 4. Render HTML Results page (common styling and menus included)
