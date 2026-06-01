@@ -142,7 +142,7 @@ INSERT INTO about (member_id, full_name, student_id, role, part1_contribution, p
   '105928000',
   'Home Page & Infrastructure',
   'Built index.html with the services table (rowspan/colspan), company stats bar, hero section with CSS background image, Acknowledgement of Country, and the global SolarCore CSS foundation. Set up the GitHub repository.',
-  'Infrastructure, database seeding, dynamic header/navigation/footer inclusions, index page conversion, and user login/logout mechanisms.',
+  'Infrastructure, database seeding, dynamic header/navigation/footer inclusions, index page conversion, built manage.php.',
   'được đây',
   'Nice / All good',
   'Vietnamese'
@@ -175,7 +175,7 @@ INSERT INTO about (member_id, full_name, student_id, role, part1_contribution, p
   '103641855',
   'About Us Page & Quality Assurance',
   'Built about.html with the team intro card, nested lists, definition list of member contributions, group photo figure with figcaption, fun facts table, and performed final W3C HTML/CSS validation, accessibility review, and ZIP packaging for submission.',
-  'About page database integration, administrator dashboard (manage.php UI and logic), session protections, query sorting and filtering implementations.',
+  'About page database integration, administrator dashboard (manage.php UI), session protections, query sorting and filtering implementations, built login and logout functions.',
   'La calidad nunca es un accidente',
   'Quality is never an accident.',
   'Spanish'

@@ -101,7 +101,7 @@ include 'nav.inc';
                 <div class="team-grid">
                     <figure class="group-photo-figure">
                         <img src="images/team-photo.png" alt="The four-member SolarCore Energy student team standing together at Swinburne University">
-                        <figcaption>SolarCore Energy team &mdash; Swinburne University, May 2026</figcaption>
+                        <figcaption>SolarCore Energy team - Swinburne University, May 2026</figcaption>
                     </figure>
                     <div>
                         <p><strong>About our company:</strong> SolarCore Energy is a Melbourne-based renewable energy company founded in 2018, delivering solar, wind, and hydro solutions across Australia.</p>

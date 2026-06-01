@@ -781,10 +781,14 @@ aside h3 {
     margin: 0;
     max-width: 400px;
     width: 100%;
+    overflow: hidden;
 }
 
 .group-photo-figure img {
+    width: 100%;
+    height: auto;
     border-radius: 12px;
+    object-fit: cover;
 }
 
 .group-photo-figure figcaption {
