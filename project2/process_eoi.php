@@ -228,8 +228,7 @@ if ($email === '') {
 }
 
 // Validate Phone Number: 8 to 12 digits (ignore spaces)
-$phone_clean = preg_replace('/\s+/', '', $phone);
-if ($phone === '') {
+$phone_clean = preg_replace('/[^0-9]/', '', $phone);if ($phone === '') {
     $errors['phone'] = 'Phone number is required.';
 } else if (!preg_match('/^\d{8,12}$/', $phone_clean)) {
     $errors['phone'] = 'Phone number must be between 8 and 12 digits.';
