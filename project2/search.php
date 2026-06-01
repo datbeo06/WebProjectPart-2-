@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // search.php
 // Job search results page handling keyword searches from jobs.php form
 // Group Nick-Thu-1030-G03

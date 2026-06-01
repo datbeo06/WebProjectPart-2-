@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // jobs.php
 // Jobs directory displaying all active positions
 // Group Nick-Thu-1030-G03

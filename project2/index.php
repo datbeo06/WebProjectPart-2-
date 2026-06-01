@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // index.php
 // Homepage for SolarCore Energy
 // Group Nick-Thu-1030-G03

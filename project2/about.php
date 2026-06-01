@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // about.php
 // About Us page dynamically loading contributions from database
 // Group Nick-Thu-1030-G03

@@ -1,4 +1,8 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // apply.php
 // Application EOI Form for SolarCore Energy
 // Group Nick-Thu-1030-G03
