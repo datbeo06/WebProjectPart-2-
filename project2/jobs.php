@@ -3,6 +3,8 @@
 // Jobs directory displaying all active positions
 // Group Nick-Thu-1030-G03
 
+/* change */ 
+
 $page_title = "Jobs — SolarCore Energy";
 
 $page_style = '
