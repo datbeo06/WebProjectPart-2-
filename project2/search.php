@@ -7,6 +7,7 @@ $page_title = "Search Results — Jobs at SolarCore Energy";
 
 $page_style = '
     <style>
+/* Jobs CSS */
         .job-card p strong {
             color: #0F4C3A;
             font-weight: 700;
@@ -86,7 +87,7 @@ $page_style = '
         .job-aside-card li {
             margin-bottom: 0.7rem;
         }
-
+/* Jobs CSS */
         .btn-apply {
             transition: all 0.2s ease;
         }
