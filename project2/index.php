@@ -125,7 +125,7 @@ include 'nav.inc';
             <div class="company-section">
                 <!-- Company image #1 -->
                 <img
-                    src="images/solar-hero.svg"
+                    src="images/solar-hero.png"
                     alt="Stylised illustration of a residential rooftop with solar panels under a bright sun and orange sky"
                     width="440"
                     height="330"
@@ -153,7 +153,7 @@ include 'nav.inc';
                 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
 
                     <figure style="flex: 1; min-width: 260px; max-width: 340px; margin: 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(15,76,58,0.08);">
-                        <img src="images/solar-panels.svg"
+                        <img src="images/solar-panels.png"
                              alt="Top-down view of a utility-scale solar PV farm with rows of dark blue panels on green ground"
                              width="340" height="255" loading="lazy"
                              style="width: 100%; height: auto; display: block;">
@@ -163,7 +163,7 @@ include 'nav.inc';
                     </figure>
 
                     <figure style="flex: 1; min-width: 260px; max-width: 340px; margin: 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(15,76,58,0.08);">
-                        <img src="images/wind-turbines.svg"
+                        <img src="images/wind-turbines.png"
                              alt="Three wind turbines on rolling green hills under a soft blue sky with clouds"
                              width="340" height="255" loading="lazy"
                              style="width: 100%; height: auto; display: block;">
@@ -173,7 +173,7 @@ include 'nav.inc';
                     </figure>
 
                     <figure style="flex: 1; min-width: 260px; max-width: 340px; margin: 0; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(15,76,58,0.08);">
-                        <img src="images/team-photo.jpg"
+                        <img src="images/team-photo.png"
                              alt="The SolarCore engineering team gathered at a project site in Melbourne"
                              width="340" height="255" loading="lazy"
                              style="width: 100%; height: 255px; object-fit: cover; display: block;">

@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS eoi (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
--- Table structure for table `jobs`
+-- Table structure for table `Jobs'
 -- --------------------------------------------------------
 CREATE TABLE IF NOT EXISTS jobs (
     job_ref VARCHAR(5) PRIMARY KEY,
