@@ -421,10 +421,12 @@ include 'nav.inc';
                     if (mysqli_stmt_execute($stmt)) {
                         $eoi_number = mysqli_insert_id($conn);
                     } else {
+                        error_log(mysqli_error($conn));
                         $db_error = true;
                     }
                     mysqli_stmt_close($stmt);
                 } else {
+                    error_log(mysqli_error($conn));
                     $db_error = true;
                 }
                 
