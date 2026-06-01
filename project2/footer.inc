@@ -22,10 +22,10 @@
 
         <!-- FOOTER LINKS — all 3 required: Jira + GitHub + email -->
         <nav class="footer-links" aria-label="Footer links">
-            <a href="https://student-team-webprj.atlassian.net/jira/software/c/projects/PSW/boards/3/backlog" aria-label="Visit our Jira project board" target="_blank" rel="noopener noreferrer">
+            <a href="https://student-team-webprj.atlassian.net/jira/software/c/projects/PSW/summary" aria-label="Visit our Jira project board" target="_blank" rel="noopener noreferrer">
                 <span aria-hidden="true">&#128203;</span> Jira
             </a>
-            <a href="https://github.com/datbeo06/cos10026-pixelore-studio" aria-label="Visit our GitHub repository" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/datbeo06/WebProjectPart-2-.git" aria-label="Visit our GitHub repository" target="_blank" rel="noopener noreferrer">
                 <span aria-hidden="true">&#128025;</span> GitHub
             </a>
             <a href="mailto:hello@solarcore.com.au" aria-label="Email SolarCore Energy">
