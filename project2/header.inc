@@ -26,7 +26,7 @@
          ===================================================== -->
     <header class="site-header">
         <a href="index.php" class="logo-link" aria-label="SolarCore Energy home">
-            <img src="images/logo.svg" alt="SolarCore Energy logo — golden sun icon with company name">
+            <img src="images/logo.png" alt="SolarCore Energy logo — golden sun icon with company name">
         </a>
         <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; font-style: italic; margin: 0;">
             Powering tomorrow with clean energy.
