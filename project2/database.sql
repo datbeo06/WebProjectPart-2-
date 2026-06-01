@@ -34,18 +34,9 @@ CREATE TABLE IF NOT EXISTS eoi (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
--- Table structure for table `jobs`
+-- Table structure for table `Jobs'
 -- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS jobs (
-    job_ref VARCHAR(5) PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL,
-    salary VARCHAR(50) NOT NULL,
-    reporting_to VARCHAR(100) NOT NULL,
-    responsibilities TEXT NOT NULL,
-    essential_requirements TEXT NOT NULL,
-    preferable_requirements TEXT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- --------------------------------------------------------
 -- Table structure for table `users` (For manager login)
