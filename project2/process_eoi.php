@@ -276,7 +276,7 @@ if (empty($errors)) {
 
         if (mysqli_stmt_num_rows($duplicate_stmt) > 0) {
             $errors['duplicate'] =
-                'An application already exists for this applicant and job reference.';
+                'You have already applied for this position. Duplicate applications are not permitted.';
         }
 
         mysqli_stmt_close($duplicate_stmt);
