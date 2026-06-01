@@ -96,7 +96,7 @@ include 'nav.inc';
                 <h2>Our Team Photo</h2>
                 <div class="team-grid">
                     <figure class="group-photo-figure">
-                        <img src="images/team-photo.jpg" alt="The four-member SolarCore Energy student team standing together at Swinburne University">
+                        <img src="images/team-photo.png" alt="The four-member SolarCore Energy student team standing together at Swinburne University">
                         <figcaption>SolarCore Energy team &mdash; Swinburne University, May 2026</figcaption>
                     </figure>
                     <div>
